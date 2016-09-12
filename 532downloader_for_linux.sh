@@ -37,7 +37,7 @@ then
 	echo "${cur_path}${html} has downloaded."
 else
 	echo "downloading... ${cur_path}${html}"
-	curl $1 > ${cur_path}${html}
+	wget $1 > ${cur_path}${html}
 fi
 #
 #分析页面内容，下载资源列表
@@ -56,7 +56,7 @@ do
 	else
 		echo ${cur_path}${line}|grep -oE '.*/'
 		mkdir -m 775 -p `echo ${cur_path}${line}|grep -oE '.*/'|awk '{print $0}'`
-		curl "http://532movie.bnu.edu.cn/"$line > ${cur_path}${line}
+		wget "http://532movie.bnu.edu.cn/"$line > ${cur_path}${line}
 	fi
 done
 #
@@ -75,12 +75,12 @@ do
 			then
 				echo "${cur_path}${movie_path}${part} has downloaded."
 			else
-				curl "http://172.16.181.55:6081/"${movie_path}${part} > ${cur_path}${movie_path}${part}
+				wget "http://172.16.181.55:6081/"${movie_path}${part} > ${cur_path}${movie_path}${part}
 				if [ -f ${cur_path}${movie_path}${part} ]
 				then
 					echo "OK ${cur_path}${movie_path}${part}"
 				else
-					curl "http://172.16.181.55:5320/"${movie_path}${part} >> ${cur_path}${movie_path}${part}
+					wget "http://172.16.181.55:5320/"${movie_path}${part} >> ${cur_path}${movie_path}${part}
 				fi
 			fi
 		fi
