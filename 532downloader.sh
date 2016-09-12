@@ -1,4 +1,4 @@
-# sli 2016/6/19
+# 2016/6/19
 # v1.0
 #
 # 532movie资源下载器
@@ -105,7 +105,7 @@ else
 		else
 			if [ ! "#" = "`echo ${part}|grep -oE '#'|awk '{print $0}'`" ]
 			then			
-				echo "!!!---loss ${movie_path}${part}---!!!"
+				echo "!!!---${movie_path}${part}lost---!!!"
 			fi	
 		fi
 		done
