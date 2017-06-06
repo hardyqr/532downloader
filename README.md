@@ -1,5 +1,7 @@
 # 532downloader
 
+For [532movie](532movie.com).
+
 ## for MAC
 1.下载532downloader.h到电脑上   <br>
 2.打开终端<br>
